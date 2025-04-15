@@ -9,5 +9,20 @@ function generateReports(students){
     else if (average >= 70) grade = 'C';
     else if (average >= 60) grade = 'D';
     else grade = 'F';
-  })
+
+    return {
+      name: student.name,
+      average,
+      grade
+    };
+  });
 }
+
+const students = [
+  {name: "Alice", scores: [90,85,92]},
+  {name: "Bob", scores: [70,68,72]},
+  {name: "Charlie", scores: [100,100,100]}
+
+];
+
+console.log(generateReports(students));
