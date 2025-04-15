@@ -32,3 +32,11 @@
 // console.log(generateReports(students));
 
 //************BANK ACCOUNT************** */
+
+class BankAccount {
+  constructor(ownerName , initialBalance){
+    this.ownerName = ownerName;
+    this.balance = initialBalance;
+    this.history = [];
+  }
+}
