@@ -70,6 +70,15 @@ class BankAccount {
 
   }
 
-  
+  printHistory() {
+    if (this.history.length === 0){
+      console.log("No transaction yet.");
+    } else{
+      console.log(`${this.ownerName}'s transaction history:`);
+      this.history.forEach(transaction => {
+        console.log(transaction);
+      });
+    }
+  }
 }
 
