@@ -39,4 +39,11 @@ class BankAccount {
     this.balance = initialBalance;
     this.history = [];
   }
+
+  deposit(amount){
+    this.balance += amount;
+    this.history.push(`Deposited $${amount}`);
+  }
+  
 }
+
