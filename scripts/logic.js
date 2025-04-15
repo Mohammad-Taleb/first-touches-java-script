@@ -54,6 +54,17 @@ class BankAccount {
     }
   }
 
+  transferTo(anotherAccount, amount){
+    if (amount > this.balance){
+      console.log("Insufficient funds for transfer")
+    } else{
+      this.balance -= amount;
+      anotherAccount.deposit(amount);
+      this.history.push(`Transferred $${amount} to ${anotherAccount.ownerName}`);
+
+    }
+  }
+
   
 }
 
