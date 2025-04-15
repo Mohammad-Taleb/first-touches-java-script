@@ -8,4 +8,8 @@ function addTask(){
 
   const newTask = document.createElement('li');
   newTask.textContent = taskText;
+
+  taskList.appendChild(newTask);
+
+  taskInput.value = '';
 }
