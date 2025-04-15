@@ -66,7 +66,7 @@ class BankAccount {
   }
 
   getSummary() {
-    return `${this.ownerName}'s balance is $${this.balance}`;
+    console.log(`${this.ownerName}'s balance is $${this.balance}`);
 
   }
 
