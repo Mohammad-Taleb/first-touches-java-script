@@ -65,6 +65,11 @@ class BankAccount {
     }
   }
 
+  getSummary() {
+    return `${this.ownerName}'s balance is $${this.balance}`;
+
+  }
+
   
 }
 
