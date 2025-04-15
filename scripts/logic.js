@@ -33,60 +33,61 @@
 
 //************BANK ACCOUNT************** */
 
-class BankAccount {
-  constructor(ownerName , initialBalance){
-    this.ownerName = ownerName;
-    this.balance = initialBalance;
-    this.history = [];
-  }
+// class BankAccount {
+//   // o(1)
+//   constructor(ownerName , initialBalance){
+//     this.ownerName = ownerName;
+//     this.balance = initialBalance;
+//     this.history = [];
+//   }
+//   // o(1)
+//   deposit(amount){
+//     this.balance += amount;
+//     this.history.push(`Deposited $${amount}`);
+//   }
+//   // 0(1)
+//   withdraw(amount){
+//     if (amount > this.balance){
+//       console.log("Insufficient funds");
+//     } else{
+//       this.balance -= amount;
+//       this.history.push(`Withdrew $ ${amount}`);
+//     }
+//   }
+//   // o(1)
+//   transferTo(anotherAccount, amount){
+//     if (amount > this.balance){
+//       console.log("Insufficient funds for transfer")
+//     } else{
+//       this.balance -= amount;
+//       anotherAccount.deposit(amount);
+//       this.history.push(`Transferred $${amount} to ${anotherAccount.ownerName}`);
 
-  deposit(amount){
-    this.balance += amount;
-    this.history.push(`Deposited $${amount}`);
-  }
+//     }
+//   }
+//   // o(1)
+//   getSummary() {
+//     console.log(`${this.ownerName}'s balance is $${this.balance}`);
 
-  withdraw(amount){
-    if (amount > this.balance){
-      console.log("Insufficient funds");
-    } else{
-      this.balance -= amount;
-      this.history.push(`Withdrew $ ${amount}`);
-    }
-  }
-
-  transferTo(anotherAccount, amount){
-    if (amount > this.balance){
-      console.log("Insufficient funds for transfer")
-    } else{
-      this.balance -= amount;
-      anotherAccount.deposit(amount);
-      this.history.push(`Transferred $${amount} to ${anotherAccount.ownerName}`);
-
-    }
-  }
-
-  getSummary() {
-    console.log(`${this.ownerName}'s balance is $${this.balance}`);
-
-  }
-
-  printHistory() {
-    if (this.history.length === 0){
-      console.log("No transaction yet.");
-    } else{
-      console.log(`${this.ownerName}'s transaction history:`);
-      this.history.forEach(transaction => {
-        console.log(transaction);
-      });
-    }
-  }
-}
-
-const acc1 = new BankAccount("John", 500);
-const acc2 = new BankAccount("Sara", 300); 
-acc1.transferTo(acc2, 200);
+//   }
+//   // o(1)
+//   printHistory() {
+//     if (this.history.length === 0){
+//       console.log("No transaction yet.");
+//     } else{
+//       console.log(`${this.ownerName}'s transaction history:`);
+//       this.history.forEach(transaction => { // o(n)
+//         console.log(transaction);
+//       });
+//     }
+//   }
+// }
+// // 0(1)
+// const acc1 = new BankAccount("John", 500);
+// const acc2 = new BankAccount("Sara", 300); 
+// acc1.transferTo(acc2, 200);
  
-acc1.getSummary(); // John's balance is $300 
-acc2.getSummary(); // Sara's balance is $500 
+// acc1.getSummary(); // John's balance is $300 
+// acc2.getSummary(); // Sara's balance is $500 
 
-acc1.printHistory();
+// acc1.printHistory();
